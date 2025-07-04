@@ -25,17 +25,20 @@ Este proyecto es un sistema de votaciones que permite gestionar votantes, candid
 ## Autenticación
 La API utiliza JWT para proteger los endpoints. Se debe incluir un token válido en el encabezado `Authorization` de las solicitudes.
 
+Para generar un token JWT que se puede usar para autenticar las solicitudes a la API, puedes usar el siguiente comando en Node.js:
+
+```bash
+node -e "const jwt = require('jsonwebtoken'); const token = jwt.sign({ user: 'admin' }, 'secret_key', { expiresIn: '1h' }); console.log(token);"
+```
+
 ## Instrucciones para Ejecutar el Proyecto Localmente
 
 1. **Clona el repositorio**:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/JonathanChacon1/voting-system-rest-api.git
    ```
 
 2. **Navega al directorio del proyecto**:
-   ```bash
-   cd TechnicalTest
-   ```
 
 3. **Instala las dependencias**:
    ```bash
@@ -70,45 +73,41 @@ A continuación se presentan algunos ejemplos de cómo interactuar con la API ut
 
 ### Crear un Votante
 - **Descripción:** Registra un nuevo votante en el sistema.
-- **Imagen:** ![Crear Votante](assets/images/VotersCreate.png)
+![Crear Votante](assets/images/VotersCreate.png)
 
 ### Obtener la Lista de Votantes
 - **Descripción:** Recupera todos los votantes registrados.
-- **Imagen:** ![Obtener Votantes](assets/images/GetVoters.png)
+![Obtener Votantes](assets/images/GetVoters.png)
 
 ### Obtener Detalles de un Votante por ID
 - **Descripción:** Recupera la información de un votante específico usando su ID.
-- **Imagen:** ![Obtener Votante por ID](assets/images/GetVotersByID.png)
+![Obtener Votante por ID](assets/images/GetVotersByID.png)
 
 ### Eliminar un Votante
 - **Descripción:** Elimina un votante del sistema usando su ID.
-- **Imagen:** ![Eliminar Votante](assets/images/VotersDelete.png)
+![Eliminar Votante](assets/images/VotersDelete.png)
 
 ### Crear un Candidato
 - **Descripción:** Registra un nuevo candidato en el sistema.
-- **Imagen:** ![Crear Candidato](assets/images/CandidateCreate.png)
+![Crear Candidato](assets/images/CandidateCreate.png)
 
 ### Obtener la Lista de Candidatos
 - **Descripción:** Recupera todos los candidatos registrados.
-- **Imagen:** ![Obtener Candidatos](assets/images/GetCandidates.png)
+![Obtener Candidatos](assets/images/GetCandidates.png)
 
 ### Emitir un Voto
 - **Descripción:** Registra un voto en el sistema.
-- **Imagen:** ![Emitir Voto](assets/images/VotesCreate.png)
+![Emitir Voto](assets/images/VotesCreate.png)
 
 ### Obtener Todos los Votos Emitidos
 - **Descripción:** Recupera todos los votos registrados en el sistema.
-- **Imagen:** ![Obtener Votos](assets/images/GetVotes.png)
+![Obtener Votos](assets/images/GetVotes.png)
 
 ### Obtener Estadísticas de la Votación
 - **Descripción:** Muestra estadísticas detalladas de la votación.
-- **Imagen:** ![Estadísticas de Votación](assets/images/VotesStatistics.png)
+![Estadísticas de Votación](assets/images/VotesStatistics.png)
 
 Estos ejemplos proporcionan una guía visual sobre cómo interactuar con la API y verificar las respuestas esperadas. 
-
-## Autor
-Desarrollado por Jonathan Chacon.
-
 
 ## Tecnologías usadas
 - Node.js
@@ -116,3 +115,6 @@ Desarrollado por Jonathan Chacon.
 - MySQL
 - Sequelize
 - JSON Web Tokens (JWT)
+
+## Autor
+Desarrollado por Jonathan Chacon.
